@@ -47,8 +47,8 @@ Traditional browser-to-API setups often break on **CORS preflight** (`OPTIONS`) 
 
 
 **How it works:**
-- Every Lambda response flows through a centralized `create_response()` utility, injecting full CORS headers.
-- API Gateway is configured with `AddDefaultAuthorizerToCorsPreflight: false`, allowing `OPTIONS` requests to bypass authentication.
+- Every Lambda response flows through a centralized `create_response()` utility, injecting full CORS headers into every exit point.
+- API Gateway is configured with `AddDefaultAuthorizerToCorsPreflight: false`, allowing `OPTIONS` requests to pass through without authentication hurdles.
 - **Result:** No browser-side CORS blocks. No preflight failures. **Zero friction.**
 
 ```python
@@ -63,70 +63,3 @@ def create_response(status_code, body):
         },
         'body': json.dumps(body, default=str)
     }
-📂 Project Structure
-Plaintext
-
-Bio-Clock/
-├── lib/                    # Flutter source code
-│   ├── features/           # Feature modules (auth, scan, inventory, analytics)
-│   ├── shared/             # Core services, themes, API client
-│   └── main.dart           # App entry point
-├── backend/                # AWS Lambda backend
-│   ├── lambda_handler.py   # Main handler (Nova Pro + Zero-CORS)
-│   ├── process_donation.py # Donation endpoint logic
-│   ├── template.yaml       # SAM Infrastructure-as-Code
-│   └── requirements.txt    # Python dependencies
-├── web/                    # Flutter Web entry point
-├── assets/                 # Brand assets & fresh icons
-├── pubspec.yaml            # Flutter dependencies
-└── README.md               # You are here
-🚀 Getting Started
-Prerequisites
-Flutter SDK ≥ 3.0.0
-
-AWS CLI (configured with us-east-1)
-
-AWS SAM CLI
-
-Run Locally (Frontend)
-Bash
-
-flutter pub get
-flutter run -d chrome --web-renderer canvaskit
-Test the Lambda Handshake
-Verify the Nova Pro integration via CLI:
-
-Bash
-
-aws lambda invoke --function-name BioClockHandler \
-  --payload file://docs/golden_test_payload.json \
-  output.json && cat output.json
-🧠 AI Pipeline & Fallback Logic
-Vision: Rekognition extracts granular labels from the food image.
-
-Analysis: Nova Pro (via Converse API) performs a multimodal analysis of the labels + context for shelf-life estimation.
-
-Decay Modeling: Precises RUL (Remaining Useful Life) is calculated using the Q10 Thermodynamic Formula.
-
-Resilience: If Bedrock throttles, a local Heuristics Database (50+ items) provides instant, fail-safe freshness verdicts.
----
-
-### 📋 Final Sync Prompt for the New Repo
-
-Now, run this in your terminal to move everything to the new repo perfectly:
-
-```bash
-# 1. Switch to the new repository link
-git remote remove origin
-git remote add origin https://github.com/Hemakrishna7406/Bio-Clock.git
-
-# 2. Cleanup local build junk to keep the repo small
-flutter clean
-rm -rf .dart_tool/
-
-# 3. Add your new README.md (save the code above into README.md first!)
-git add .
-
-# 4. Final Commit & Push
-git commit -m "Final: Production-ready sync with creative README and Zero-CORS docs"
-git push -u origin staging
