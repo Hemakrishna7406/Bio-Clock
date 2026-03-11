@@ -1,0 +1,380 @@
+{
+    "Apple": {
+        "base_shelf_life_days": 30,
+        "optimal_temp_c": 1,
+        "optimal_humidity_percent": 90,
+        "tips": "Store away from ethylene-sensitive items."
+    },
+    "Apricot": {
+        "base_shelf_life_days": 5,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 90,
+        "tips": "Store unripe in paper bag, ripe in fridge."
+    },
+    "Banana": {
+        "base_shelf_life_days": 7,
+        "optimal_temp_c": 14,
+        "optimal_humidity_percent": 90,
+        "tips": "Keep away from other fruits to prevent rapid ripening."
+    },
+    "Beetroot": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 98,
+        "tips": "Remove leafy tops before storing."
+    },
+    "Bitter_Gourd": {
+        "base_shelf_life_days": 5,
+        "optimal_temp_c": 12,
+        "optimal_humidity_percent": 90,
+        "tips": "Wrap in paper towel and store in crisper."
+    },
+    "Bottle_Gourd": {
+        "base_shelf_life_days": 7,
+        "optimal_temp_c": 10,
+        "optimal_humidity_percent": 90,
+        "tips": "Do not wash before storing."
+    },
+    "Brinjal": {
+        "base_shelf_life_days": 7,
+        "optimal_temp_c": 10,
+        "optimal_humidity_percent": 90,
+        "tips": "Sensitive to cold; keep in cool, dry place."
+    },
+    "Broccoli": {
+        "base_shelf_life_days": 5,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 95,
+        "tips": "Wrap loosely in punctured plastic bag."
+    },
+    "Cabbage": {
+        "base_shelf_life_days": 30,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 98,
+        "tips": "Store whole in vegetable crisper."
+    },
+    "Cantaloupe": {
+        "base_shelf_life_days": 10,
+        "optimal_temp_c": 3,
+        "optimal_humidity_percent": 90,
+        "tips": "Refrigerate after cutting."
+    },
+    "Carrot": {
+        "base_shelf_life_days": 21,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 98,
+        "tips": "Remove green tops, store in sealed bag."
+    },
+    "Cauliflower": {
+        "base_shelf_life_days": 7,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 95,
+        "tips": "Store stem down in plastic bag."
+    },
+    "Coconut": {
+        "base_shelf_life_days": 60,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 80,
+        "tips": "Store fresh at room temp, refrigerate cracked."
+    },
+    "Coriander_Leaves": {
+        "base_shelf_life_days": 5,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 95,
+        "tips": "Wrap stems in damp towel, keep leaves dry."
+    },
+    "Corn": {
+        "base_shelf_life_days": 3,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 95,
+        "tips": "Keep husks on, refrigerate immediately."
+    },
+    "Cucumber": {
+        "base_shelf_life_days": 7,
+        "optimal_temp_c": 10,
+        "optimal_humidity_percent": 95,
+        "tips": "Avoid extreme cold to prevent pitting."
+    },
+    "Custard_Apple": {
+        "base_shelf_life_days": 5,
+        "optimal_temp_c": 15,
+        "optimal_humidity_percent": 90,
+        "tips": "Ripen at room temp, refrigerate when soft."
+    },
+    "Dates": {
+        "base_shelf_life_days": 180,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 75,
+        "tips": "Store in airtight container."
+    },
+    "Fig": {
+        "base_shelf_life_days": 3,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 90,
+        "tips": "Highly perishable, eat quickly or refrigerate."
+    },
+    "Garlic": {
+        "base_shelf_life_days": 90,
+        "optimal_temp_c": 15,
+        "optimal_humidity_percent": 65,
+        "tips": "Keep in cool, dry, dark place. Do not refrigerate."
+    },
+    "Ginger": {
+        "base_shelf_life_days": 21,
+        "optimal_temp_c": 12,
+        "optimal_humidity_percent": 75,
+        "tips": "Store in paper bag in crisper."
+    },
+    "Grapes": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 95,
+        "tips": "Store unwashed in perforated bag."
+    },
+    "Green_Beans": {
+        "base_shelf_life_days": 7,
+        "optimal_temp_c": 5,
+        "optimal_humidity_percent": 95,
+        "tips": "Store unwashed in plastic bag."
+    },
+    "Green_Capsicum": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 7,
+        "optimal_humidity_percent": 95,
+        "tips": "Store in produce bag in crisper drawer."
+    },
+    "Green_Chilli": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 7,
+        "optimal_humidity_percent": 95,
+        "tips": "Remove stalks before storing."
+    },
+    "Guava": {
+        "base_shelf_life_days": 10,
+        "optimal_temp_c": 8,
+        "optimal_humidity_percent": 90,
+        "tips": "Ripen at room temp, then refrigerate."
+    },
+    "Kiwi": {
+        "base_shelf_life_days": 30,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 90,
+        "tips": "Keep away from ethylene-producing fruits."
+    },
+    "Lemon": {
+        "base_shelf_life_days": 30,
+        "optimal_temp_c": 10,
+        "optimal_humidity_percent": 90,
+        "tips": "Store in sealed plastic bag in crisper."
+    },
+    "Lettuce": {
+        "base_shelf_life_days": 10,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 98,
+        "tips": "Wrap in paper towel to absorb moisture."
+    },
+    "Lime": {
+        "base_shelf_life_days": 21,
+        "optimal_temp_c": 10,
+        "optimal_humidity_percent": 90,
+        "tips": "Keep dry, avoid direct sunlight."
+    },
+    "Lychee": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 5,
+        "optimal_humidity_percent": 90,
+        "tips": "Store in high humidity to prevent browning."
+    },
+    "Mango": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 13,
+        "optimal_humidity_percent": 90,
+        "tips": "Ripen at room temp, refrigerate fully ripe."
+    },
+    "Mint_Leaves": {
+        "base_shelf_life_days": 7,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 95,
+        "tips": "Wrap wet stems in paper towel, keep leaves dry."
+    },
+    "Mushroom": {
+        "base_shelf_life_days": 7,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 90,
+        "tips": "Store unwashed in paper bag."
+    },
+    "Muskmelon": {
+        "base_shelf_life_days": 10,
+        "optimal_temp_c": 3,
+        "optimal_humidity_percent": 90,
+        "tips": "Keep whole at room temp until cut."
+    },
+    "Okra": {
+        "base_shelf_life_days": 3,
+        "optimal_temp_c": 10,
+        "optimal_humidity_percent": 90,
+        "tips": "Do not wash until ready to use. Keep dry."
+    },
+    "Onion": {
+        "base_shelf_life_days": 60,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 65,
+        "tips": "Store in cool, dark, dry place."
+    },
+    "Orange": {
+        "base_shelf_life_days": 21,
+        "optimal_temp_c": 5,
+        "optimal_humidity_percent": 90,
+        "tips": "Store loose in crisper drawer."
+    },
+    "Papaya": {
+        "base_shelf_life_days": 7,
+        "optimal_temp_c": 10,
+        "optimal_humidity_percent": 85,
+        "tips": "Ripen at room temp, refrigerate sliced."
+    },
+    "Peach": {
+        "base_shelf_life_days": 5,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 90,
+        "tips": "Ripen stem-down at room temp."
+    },
+    "Pear": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": -1,
+        "optimal_humidity_percent": 90,
+        "tips": "Ripen at room temp, hold in fridge."
+    },
+    "Peas": {
+        "base_shelf_life_days": 5,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 95,
+        "tips": "Shell right before use, keep refrigerated."
+    },
+    "Pineapple": {
+        "base_shelf_life_days": 3,
+        "optimal_temp_c": 10,
+        "optimal_humidity_percent": 90,
+        "tips": "Store with crown attached to keep fresh."
+    },
+    "Plum": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 90,
+        "tips": "Ripen at room temp before refrigerating."
+    },
+    "Pomegranate": {
+        "base_shelf_life_days": 60,
+        "optimal_temp_c": 5,
+        "optimal_humidity_percent": 90,
+        "tips": "Can be stored whole for a long period."
+    },
+    "Potato": {
+        "base_shelf_life_days": 90,
+        "optimal_temp_c": 4,
+        "optimal_humidity_percent": 95,
+        "tips": "Keep dark. Do not refrigerate raw."
+    },
+    "Pumpkin": {
+        "base_shelf_life_days": 90,
+        "optimal_temp_c": 10,
+        "optimal_humidity_percent": 60,
+        "tips": "Keep dry, avoid resting on bare concrete."
+    },
+    "Radish": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 98,
+        "tips": "Remove leaves to prevent moisture loss."
+    },
+    "Red_Capsicum": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 7,
+        "optimal_humidity_percent": 95,
+        "tips": "Store unwashed in plastic bag."
+    },
+    "Ridge_Gourd": {
+        "base_shelf_life_days": 5,
+        "optimal_temp_c": 10,
+        "optimal_humidity_percent": 90,
+        "tips": "Wrap in paper and store in fridge."
+    },
+    "Spinach": {
+        "base_shelf_life_days": 7,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 95,
+        "tips": "Keep moist, wrap in paper towel."
+    },
+    "Spring_Onion": {
+        "base_shelf_life_days": 10,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 95,
+        "tips": "Store root down in a bit of water."
+    },
+    "Strawberry": {
+        "base_shelf_life_days": 5,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 95,
+        "tips": "Do not wash until ready to eat."
+    },
+    "Sweet_Lime": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 10,
+        "optimal_humidity_percent": 90,
+        "tips": "Store at room temp or fridge crisper."
+    },
+    "Sweet_Potato": {
+        "base_shelf_life_days": 30,
+        "optimal_temp_c": 15,
+        "optimal_humidity_percent": 85,
+        "tips": "Store in cool, dark place. Never refrigerate."
+    },
+    "Tangerine": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 5,
+        "optimal_humidity_percent": 90,
+        "tips": "Store loose in crisper."
+    },
+    "Tender_Coconut": {
+        "base_shelf_life_days": 7,
+        "optimal_temp_c": 4,
+        "optimal_humidity_percent": 80,
+        "tips": "Consume quickly once open."
+    },
+    "Tomato": {
+        "base_shelf_life_days": 7,
+        "optimal_temp_c": 12,
+        "optimal_humidity_percent": 90,
+        "tips": "Ripen at room temp. Refrigerate only when fully ripe."
+    },
+    "Turnip": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 0,
+        "optimal_humidity_percent": 95,
+        "tips": "Remove green tops before storing."
+    },
+    "Watermelon": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 15,
+        "optimal_humidity_percent": 90,
+        "tips": "Keep whole at room temp, refrigerate cut slices."
+    },
+    "Yam": {
+        "base_shelf_life_days": 30,
+        "optimal_temp_c": 15,
+        "optimal_humidity_percent": 75,
+        "tips": "Store in well-ventilated, dark pantry."
+    },
+    "Yellow_Capsicum": {
+        "base_shelf_life_days": 14,
+        "optimal_temp_c": 7,
+        "optimal_humidity_percent": 95,
+        "tips": "Store unwashed in plastic bag."
+    },
+    "Zucchini": {
+        "base_shelf_life_days": 10,
+        "optimal_temp_c": 7,
+        "optimal_humidity_percent": 95,
+        "tips": "Do not wash until use."
+    }
+}
