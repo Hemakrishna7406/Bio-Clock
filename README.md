@@ -27,29 +27,32 @@
 ## 🏗 Technical Stack
 
 | Layer | Technology |
-|:--- |:--- |
+|-------|-----------|
 | **Frontend** | Flutter Web (Dart) with Material 3, Riverpod, GoRouter |
 | **Backend** | AWS Lambda (Python 3.10) — Single handler, all routes |
-| **AI Engine** | **Amazon Bedrock (Nova Pro v1)** — High-fidelity reasoning |
-| **Vision** | **Amazon Rekognition** — Multimodal Label & Freshness Detection |
+| **AI Engine** | Amazon Bedrock (Nova Pro v1 — Converse API) |
+| **Vision** | Amazon Rekognition (Label Detection) |
 | **Auth** | Amazon Cognito (User Pool + Identity Pool) |
 | **Database** | Amazon DynamoDB (Single-table PK/SK design) |
-| **Storage** | Amazon S3 (Encrypted image uploads) |
+| **Storage** | Amazon S3 (Scan image uploads) |
 | **API** | Amazon API Gateway (REST, Lambda Proxy Integration) |
-| **Hosting** | **AWS Amplify** (CI/CD Pipeline) |
+| **IaC** | AWS SAM (template.yaml) |
 
 ---
 
 ## 🛡 Zero-CORS Architecture — The "Golden" Fix
 
-Traditional browser-to-API setups often break on **CORS preflight** (`OPTIONS`) requests — a notorious blocker in Flutter Web ↔ Lambda integrations. Bio-Clock eliminates this entirely with a **Zero-CORS Lambda Proxy** pattern:
+Traditional browser-to-API setups break on **CORS preflight** (`OPTIONS`) requests — a notorious blocker in Flutter Web ↔ Lambda integrations. Bio-Clock eliminates this entirely with a **Zero-CORS Lambda Proxy** pattern:
 
-
+```
+Browser → API Gateway (Lambda Proxy) → Lambda injects CORS in EVERY response
+```
 
 **How it works:**
-- Every Lambda response flows through a centralized `create_response()` utility, injecting full CORS headers into every exit point.
-- API Gateway is configured with `AddDefaultAuthorizerToCorsPreflight: false`, allowing `OPTIONS` requests to pass through without authentication hurdles.
-- **Result:** No browser-side CORS blocks. No preflight failures. **Zero friction.**
+
+- Every Lambda response flows through `create_response()`, which injects full CORS headers (`Access-Control-Allow-Origin: *`, all methods, all headers).
+- API Gateway is configured with `AddDefaultAuthorizerToCorsPreflight: false` — so `OPTIONS` requests pass through without authentication.
+- No browser-side CORS blocks. No preflight failures. **Zero friction.**
 
 ```python
 def create_response(status_code, body):
@@ -57,9 +60,103 @@ def create_response(status_code, body):
         'statusCode': status_code,
         'headers': {
             'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Headers': 'Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token',
+            'Access-Control-Allow-Headers': 'Content-Type,Authorization,...',
             'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PUT,DELETE',
             'Content-Type': 'application/json'
         },
         'body': json.dumps(body, default=str)
     }
+```
+
+---
+
+## 📂 Project Structure
+
+```
+Bio-Clock/
+├── lib/                    # Flutter source code
+│   ├── features/           # Feature modules (auth, scan, inventory, graph)
+│   ├── shared/             # Core services, theme, API client
+│   └── main.dart           # App entry point
+├── backend/                # AWS Lambda backend
+│   ├── lambda_handler.py   # Main handler (Nova Pro + Zero-CORS)
+│   ├── process_donation.py # Donation endpoint handler
+│   ├── deploy_lambda.py    # Deployment helper
+│   ├── template.yaml       # SAM infrastructure-as-code
+│   └── requirements.txt    # Python dependencies
+├── docs/                   # Documentation
+│   ├── architecture.md     # System architecture diagram
+│   └── golden_test_payload.json  # Handshake test payload
+├── web/                    # Flutter Web entry point
+├── assets/                 # App assets (images, logo)
+├── pubspec.yaml            # Flutter dependencies
+└── README.md               # ← You are here
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Flutter SDK ≥ 3.0.0
+- AWS CLI (configured)
+- AWS SAM CLI
+
+### Run Locally (Frontend)
+
+```bash
+flutter pub get
+flutter run -d chrome
+```
+
+### Deploy Backend
+
+```bash
+cd backend
+sam build
+sam deploy --guided
+```
+
+### Test the Lambda Handshake
+
+Use the golden test payload in `docs/golden_test_payload.json`:
+
+```bash
+aws lambda invoke --function-name <YourFunctionName> \
+  --payload file://docs/golden_test_payload.json \
+  output.json && cat output.json
+```
+
+**Expected Response:**
+
+```json
+{
+  "statusCode": 200,
+  "body": "{\"verdict\": \"System Active\", \"engine\": \"Nova-Pro\"}"
+}
+```
+
+---
+
+## 🧠 AI Pipeline
+
+```
+Image Capture → Rekognition (Labels) → Nova Pro (Converse API) → Q10 RUL Calculation → DynamoDB
+                                         ↓ (fallback)
+                                    In-house ML Engine
+                                    (50+ item heuristics DB)
+```
+
+1. **Rekognition** detects food labels from the uploaded image.
+2. **Nova Pro** analyzes labels + image (multimodal) for item identification, shelf-life estimation, and storage advice.
+3. If Bedrock fails/throttles, the **In-house ML Fallback** provides instant results from a local heuristics database.
+4. **Q10 Thermodynamic Decay** calculates precise RUL in minutes based on storage temperature.
+
+---
+
+## 📄 License
+
+Built for the **AWS AI for Bharat** hackathon.
+
+© 2026 Bio-Clock Team. All rights reserved.
